@@ -7,6 +7,8 @@ using Entitas.CodeGeneration.Attributes;
 [Game, Unique]
 public class GameConfig : ScriptableObject
 {
+    public GameObject enemy; 
+    
     [SerializeField] private LightSpell[] lightSpells;
     [SerializeField] private StrongSpell[] strongSpells;
     
@@ -33,10 +35,7 @@ public class GameConfig : ScriptableObject
             StrongSpellsMap.Add(spell.SpellType, spell);
         }
     }
-
-
 }
-
 
 public class BaseSpell
 {

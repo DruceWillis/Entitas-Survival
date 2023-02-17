@@ -18,6 +18,17 @@ public class InitializePlayerSystem : IInitializeSystem
         e.AddResource(_contexts.game.gameConfig.value.player);
         e.AddDisplacement(Vector3.zero);
         e.AddSpawnPosition(Vector3.zero);
+        
+        // TESTING
+        for (int i = 1; i < 2; i++)
+        {
+            var ee = _contexts.game.CreateEntity();
+            ee.isEnemy = true;
+            ee.AddResource(_contexts.game.gameConfig.value.enemy);
+            ee.AddDisplacement(Vector3.zero);
+            ee.AddSpawnPosition(Vector3.one * (i + 1));
+        }
+
     }
     
 }

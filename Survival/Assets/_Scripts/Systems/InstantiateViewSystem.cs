@@ -37,7 +37,9 @@ public class InstantiateViewSystem : ReactiveSystem<GameEntity>
             }
             
             e.AddMovable(e.view.value.GetComponent<Rigidbody2D>());
-            e.AddAnimator(e.view.value.GetComponent<Animator>());
+            if (!e.isEnemy)
+                e.AddAnimator(e.view.value.GetComponent<Animator>());   
+            e.AddSpriteRenderer(e.view.value.GetComponent<SpriteRenderer>());
         }
     }
 }

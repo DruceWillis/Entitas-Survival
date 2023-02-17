@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e321efc09a394f66a338e7a79750d8ec, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  enemy: {fileID: 9145901576694177613, guid: 933127c29e3aac045b23cf845bcf3189, type: 3}
   lightSpells:
   - Prefab: {fileID: 6499822883630383744, guid: 52788147bf78bd947b3491490e96cd35, type: 3}
     Damage: 5
