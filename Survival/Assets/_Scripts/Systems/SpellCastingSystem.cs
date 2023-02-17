@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using Entitas.Unity;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -29,15 +30,24 @@ public class SpellCastingSystem : IExecuteSystem
 
         if (_lmbTimer <= 0 && (_inputManager.lmbIsPressed || _inputManager.lmbWasPressed))
         {
-            _lmbTimer = _config.LMBSpellCooldown;
-            var go = Object.Instantiate(_lightSpellsMap[eLightSpellType.Explosion].Prefab, 
-                _inputManager.mouseWorldPosition,
-                quaternion.identity);
+            CastLightSpell();
         }
     }
 
     private void CastLightSpell()
     {
+        _lmbTimer = _config.LMBSpellCooldown;
+        var go = Object.Instantiate(_lightSpellsMap[eLightSpellType.Explosion].Prefab, 
+            _inputManager.mouseWorldPosition,
+            quaternion.identity);
+        var e = _contexts.game.CreateEntity();
         
+        e.AddView(go);
+        e.AddAnimator(go.GetComponent<Animator>());
+        e.isDestroyed = false;
+        e.isSpell = true;
+        go.Link(e);
+        
+        _contexts.game.playerEntity.animator.value.SetTrigger(Constants.CastedLightSpell);
     }
 }

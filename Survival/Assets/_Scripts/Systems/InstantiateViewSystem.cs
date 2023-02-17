@@ -37,6 +37,7 @@ public class InstantiateViewSystem : ReactiveSystem<GameEntity>
             }
             
             e.AddMovable(e.view.value.GetComponent<Rigidbody2D>());
+            e.AddAnimator(e.view.value.GetComponent<Animator>());
         }
     }
 }

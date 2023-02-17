@@ -18,6 +18,8 @@ public class MoveSystem : IExecuteSystem
         {
             var displacement = e.displacement.value;
             e.movable.rigidbody2D.MovePosition(e.movable.rigidbody2D.position + (Vector2)(displacement * Time.deltaTime));
+            bool isMoving = displacement.sqrMagnitude > 0; 
+            e.animator.value.SetBool(Constants.IsMoving, isMoving);
         }
         // var dir = 
         // _contexts.game.playerEntity.ReplaceMove(_contexts.input.inputManager.movementInput * Time.deltaTime * 5);

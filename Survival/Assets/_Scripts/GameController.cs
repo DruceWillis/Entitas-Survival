@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
             .Add(new EmitInputSystem(contexts, new UnityInputService(_camera)))
             .Add(new UpdateCameraSystem(contexts, _camera))
             .Add(new SpellCastingSystem(contexts))
+            .Add(new SpellStateTrackingSystem(contexts))
+            .Add(new DestroySystem(contexts))
             ;
     }
     
