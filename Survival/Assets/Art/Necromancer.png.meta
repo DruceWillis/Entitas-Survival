@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 96
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1683,21 +1683,21 @@ TextureImporter:
       Necromancer_50: 1314244556
       Necromancer_38: 92441783
       Necromancer_15: -1921268463
+      Necromancer_7: 1278300429
       Necromancer_71: -1547060996
-      Necromancer_9: 2082193218
       Necromancer_49: 676034193
       Necromancer_55: -1270215858
-      Necromancer_7: 1278300429
       Necromancer_41: -840740867
       Necromancer_56: 237243624
       Necromancer_70: -737837623
       Necromancer_20: -66002448
+      Necromancer_9: 2082193218
       Necromancer_11: 1861146010
-      Necromancer_43: 394343429
       Necromancer_3: 449271794
-      Necromancer_72: 939654441
+      Necromancer_43: 394343429
       Necromancer_10: -1640233110
       Necromancer_57: 1947218940
+      Necromancer_72: 939654441
       Necromancer_29: -1962573983
       Necromancer_32: -1797926834
       Necromancer_19: -2075964070

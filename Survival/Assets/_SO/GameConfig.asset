@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e321efc09a394f66a338e7a79750d8ec, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  lightSpells:
+  - Prefab: {fileID: 6499822883630383744, guid: 52788147bf78bd947b3491490e96cd35, type: 3}
+    Damage: 5
+    SpellType: 0
+  strongSpells:
+  - Prefab: {fileID: 6499822883630383744, guid: 215491be02bed63488dd7d4797dd90ae, type: 3}
+    Damage: 20
+    SpellType: 0
   player: {fileID: 3780109423907318791, guid: 117ff74c602f3e541a5582abd9e3091c, type: 3}
   PlayerSpeed: 3
+  LMBSpellCooldown: 0.33333334
+  RMBSpellCooldown: 3

@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputManagerComponent : IComponent
 {
     public Vector2 movementInput;
+    public Vector2 mouseWorldPosition;
     public bool lmbWasPressed;
     public bool lmbIsPressed;
     public bool rmbWasPressed;

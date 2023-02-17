@@ -9,16 +9,15 @@ public class MoveSystem : IExecuteSystem
     public MoveSystem(Contexts contexts)
     {
         _contexts = contexts;
-        _group = _contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.View, GameMatcher.Displacement, GameMatcher.Move));
+        _group = _contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.View, GameMatcher.Displacement, GameMatcher.Movable));
     }
 
     public void Execute()
     {
         foreach (var e in _group.GetEntities())
         {
-            var tr = e.view.value.transform;
             var displacement = e.displacement.value;
-            tr.transform.position += displacement * Time.deltaTime;
+            e.movable.rigidbody2D.MovePosition(e.movable.rigidbody2D.position + (Vector2)(displacement * Time.deltaTime));
         }
         // var dir = 
         // _contexts.game.playerEntity.ReplaceMove(_contexts.input.inputManager.movementInput * Time.deltaTime * 5);

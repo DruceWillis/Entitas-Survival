@@ -35,6 +35,8 @@ public class InstantiateViewSystem : ReactiveSystem<GameEntity>
             {
                 go.transform.position = e.spawnPosition.value;
             }
+            
+            e.AddMovable(e.view.value.GetComponent<Rigidbody2D>());
         }
     }
 }

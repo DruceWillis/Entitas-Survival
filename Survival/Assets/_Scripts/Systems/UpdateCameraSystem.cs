@@ -14,6 +14,7 @@ public class UpdateCameraSystem : IExecuteSystem
 
     public void Execute()
     {
+        if (!_contexts.game.playerEntity.hasView) return;
         if (_contexts.game.playerEntity.view.value)
             _camera.transform.position = _contexts.game.playerEntity.view.value.transform.position 
                                          + new Vector3(0, 0, -10);
