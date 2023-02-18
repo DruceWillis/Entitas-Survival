@@ -7,13 +7,15 @@ using UnityEngine;
 public class SpellCastingSystem : IExecuteSystem
 {
     private Contexts _contexts;
-    private float _lmbTimer;
-    private float _rmbTimer;
-    public Dictionary<eLightSpellType, LightSpell> _lightSpellsMap;
-    public Dictionary<eStrongSpellType, StrongSpell> _strongSpellsMap;
     private GameConfig _config;
     private InputManagerComponent _inputManager;
 
+    public Dictionary<eLightSpellType, LightSpell> _lightSpellsMap;
+    public Dictionary<eStrongSpellType, StrongSpell> _strongSpellsMap;
+
+    private float _lmbTimer;
+    private float _rmbTimer;
+    
     public SpellCastingSystem(Contexts contexts)
     {
         _contexts = contexts;
@@ -34,20 +36,34 @@ public class SpellCastingSystem : IExecuteSystem
         }
     }
 
-    private void CastLightSpell()
+    private void CastSpell(GameObject prefab, int damage)
     {
-        _lmbTimer = _config.LMBSpellCooldown;
-        var go = Object.Instantiate(_lightSpellsMap[eLightSpellType.Explosion].Prefab, 
+        var go = Object.Instantiate(prefab, 
             _inputManager.mouseWorldPosition,
             quaternion.identity);
         var e = _contexts.game.CreateEntity();
-        
         e.AddView(go);
         e.AddAnimator(go.GetComponent<Animator>());
         e.isDestroyed = false;
-        e.isSpell = true;
+        e.AddSpell(damage);
         go.Link(e);
+    }
+    
+    private void CastLightSpell()
+    {
+        _lmbTimer = _config.LMBSpellCooldown;
+        var spell = _lightSpellsMap[eLightSpellType.Explosion];
         
+        CastSpell(spell.Prefab, spell.Damage);
+            
         _contexts.game.playerEntity.animator.value.SetTrigger(Constants.CastedLightSpell);
+    }
+    
+    private void CastStrongSpell()
+    {
+        _rmbTimer = _config.RMBSpellCooldown;
+        // CastSpell(_strongSpellsMap[eStrongSpellType.StrongExplosion].Prefab);
+            
+        _contexts.game.playerEntity.animator.value.SetTrigger(Constants.CastedStrongSpell);
     }
 }

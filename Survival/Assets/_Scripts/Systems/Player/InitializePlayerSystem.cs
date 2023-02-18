@@ -18,6 +18,8 @@ public class InitializePlayerSystem : IInitializeSystem
         e.AddResource(_contexts.game.gameConfig.value.player);
         e.AddDisplacement(Vector3.zero);
         e.AddSpawnPosition(Vector3.zero);
+        e.isCombatEntity = true;
+        e.AddHealth(3);
         
         // TESTING
         for (int i = 1; i < 2; i++)
@@ -27,8 +29,9 @@ public class InitializePlayerSystem : IInitializeSystem
             ee.AddResource(_contexts.game.gameConfig.value.enemy);
             ee.AddDisplacement(Vector3.zero);
             ee.AddSpawnPosition(Vector3.one * (i + 1));
+            ee.isCombatEntity = true;
+            ee.AddHealth(10);
         }
-
     }
     
 }

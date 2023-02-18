@@ -5,7 +5,6 @@ public class PlayerDisplacementSystem : IExecuteSystem
 {
     private Contexts _contexts;
     
-
     public PlayerDisplacementSystem(Contexts contexts)
     {
         _contexts = contexts;

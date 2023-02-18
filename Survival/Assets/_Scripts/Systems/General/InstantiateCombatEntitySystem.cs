@@ -3,24 +3,24 @@ using Entitas;
 using Entitas.Unity;
 using UnityEngine;
 
-public class InstantiateViewSystem : ReactiveSystem<GameEntity>
+public class InstantiateCombatEntitySystem : ReactiveSystem<GameEntity>
 {
     private Contexts _contexts;
     
 
-    public InstantiateViewSystem(Contexts contexts) : base(contexts.game)
+    public InstantiateCombatEntitySystem(Contexts contexts) : base(contexts.game)
     {
         _contexts = contexts;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Resource);
+        return context.CreateCollector(GameMatcher.CombatEntity);
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasResource && !entity.hasView;
+        return entity.hasResource && entity.isCombatEntity && !entity.hasView;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -37,8 +37,7 @@ public class InstantiateViewSystem : ReactiveSystem<GameEntity>
             }
             
             e.AddMovable(e.view.value.GetComponent<Rigidbody2D>());
-            if (!e.isEnemy)
-                e.AddAnimator(e.view.value.GetComponent<Animator>());   
+            e.AddAnimator(e.view.value.GetComponent<Animator>());   
             e.AddSpriteRenderer(e.view.value.GetComponent<SpriteRenderer>());
         }
     }
