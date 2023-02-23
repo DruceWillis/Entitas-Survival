@@ -13,6 +13,7 @@ public class PlayerDisplacementSystem : IExecuteSystem
     public void Execute()
     {
         _contexts.game.playerEntity.ReplaceDisplacement(
-            _contexts.input.inputManager.movementInput * _contexts.game.gameConfig.value.PlayerSpeed);
+            _contexts.input.inputManager.movementInput * 
+            _contexts.game.gameConfig.value.PlayerConfig.PlayerSpeed);
     }
 }

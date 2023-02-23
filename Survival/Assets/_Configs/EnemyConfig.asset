@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573e03623c034c09bea8a7cb9e2212b2, type: 3}
+  m_Name: EnemyConfig
+  m_EditorClassIdentifier: 
+  _meleeEnemies: []
+  _rangedEnemies:
+  - Prefab: {fileID: 9145901576694177613, guid: 933127c29e3aac045b23cf845bcf3189, type: 3}
+    Health: 10
+    Speed: 3
+    AttackCooldown: 1
+    EnemyType: 0
+    Range: 4.5
+    Projectile: {fileID: 137624787546692637, guid: 7eda9af23840fc94ea2c3c1232b9bb3f, type: 3}
+    ProjectileSpeed: 5

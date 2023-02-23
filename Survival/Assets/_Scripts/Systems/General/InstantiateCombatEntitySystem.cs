@@ -20,7 +20,7 @@ public class InstantiateCombatEntitySystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasResource && entity.isCombatEntity && !entity.hasView;
+        return entity.hasResource && entity.hasCombatEntity && !entity.hasView;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -35,7 +35,7 @@ public class InstantiateCombatEntitySystem : ReactiveSystem<GameEntity>
             {
                 go.transform.position = e.spawnPosition.value;
             }
-            
+
             e.AddMovable(e.view.value.GetComponent<Rigidbody2D>());
             e.AddAnimator(e.view.value.GetComponent<Animator>());   
             e.AddSpriteRenderer(e.view.value.GetComponent<SpriteRenderer>());

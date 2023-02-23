@@ -32,13 +32,13 @@ public class HitEnemiesSystem : ReactiveSystem<GameEntity>
             foreach (var enemy in e.spellCollision.collisions)
             {
                 var enemyEntity = _contexts.game.GetEntitiesWithView(enemy).SingleEntity();
-                var currentHealth = enemyEntity.health.Health - damage;
+                var currentHealth = enemyEntity.health.value - damage;
                 enemyEntity.ReplaceHealth(currentHealth);
-                
-                enemyEntity.animator.value.SetTrigger(Constants.TakeHit);
                 
                 if (currentHealth <= 0)
                     enemyEntity.isDestroyed = true;
+                else
+                    enemyEntity.animator.value.SetTrigger(Constants.TakeHit);
             }
         }
     }

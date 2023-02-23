@@ -7,7 +7,7 @@ using UnityEngine;
 public class SpellCastingSystem : IExecuteSystem
 {
     private Contexts _contexts;
-    private GameConfig _config;
+    private SpellConfig _config;
     private InputManagerComponent _inputManager;
 
     public Dictionary<eLightSpellType, LightSpell> _lightSpellsMap;
@@ -19,7 +19,7 @@ public class SpellCastingSystem : IExecuteSystem
     public SpellCastingSystem(Contexts contexts)
     {
         _contexts = contexts;
-        _config = _contexts.game.gameConfig.value;
+        _config = _contexts.game.gameConfig.value.SpellConfig;
         _lightSpellsMap = _config.LightSpellsMap;
         _strongSpellsMap = _config.StrongSpellsMap;
         _inputManager = _contexts.input.inputManager;
@@ -33,6 +33,11 @@ public class SpellCastingSystem : IExecuteSystem
         if (_lmbTimer <= 0 && (_inputManager.lmbIsPressed || _inputManager.lmbWasPressed))
         {
             CastLightSpell();
+        }
+
+        if (_rmbTimer <= 0 && _inputManager.rmbWasPressed)
+        {
+            CastStrongSpell();
         }
     }
 
@@ -62,7 +67,9 @@ public class SpellCastingSystem : IExecuteSystem
     private void CastStrongSpell()
     {
         _rmbTimer = _config.RMBSpellCooldown;
-        // CastSpell(_strongSpellsMap[eStrongSpellType.StrongExplosion].Prefab);
+        var spell = _strongSpellsMap[eStrongSpellType.StrongExplosion];
+        
+        CastSpell(spell.Prefab, spell.Damage);
             
         _contexts.game.playerEntity.animator.value.SetTrigger(Constants.CastedStrongSpell);
     }

@@ -10,5 +10,4 @@ public class InputManagerComponent : IComponent
     public bool lmbWasPressed;
     public bool lmbIsPressed;
     public bool rmbWasPressed;
-    public bool rmbWasReleased;
 }

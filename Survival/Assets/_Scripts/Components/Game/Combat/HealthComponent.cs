@@ -3,5 +3,5 @@
 [Game]
 public class HealthComponent : IComponent
 {
-    public int Health;
+    public int value;
 }

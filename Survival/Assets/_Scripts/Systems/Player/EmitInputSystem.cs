@@ -10,7 +10,7 @@ public class EmitInputSystem : IExecuteSystem
     {
         _input = contexts.input;
         _inputService = inputService;
-        _input.SetInputManager(Vector2.zero, Vector2.zero, false, false, false, false);
+        _input.SetInputManager(Vector2.zero, Vector2.zero, false, false, false);
     }
     
     public void Execute()
@@ -24,7 +24,6 @@ public class EmitInputSystem : IExecuteSystem
         inputManager.lmbIsPressed = _inputService.LMBIsPressed;
         
         inputManager.rmbWasPressed = _inputService.RMBWasPressed;
-        inputManager.rmbWasReleased = _inputService.RMBWasReleased;
     }
 
 }

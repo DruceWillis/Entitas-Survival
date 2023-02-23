@@ -38,12 +38,15 @@ public class GameController : MonoBehaviour
     {
         return new Feature("Game")
             .Add(new InitializePlayerSystem(contexts))
+            .Add(new EnemySpawnSystem(contexts, this))
             .Add(new InstantiateCombatEntitySystem(contexts))
             .Add(new EmitInputSystem(contexts, new UnityInputService(_camera)))
             .Add(new UpdateCameraSystem(contexts, _camera))
             .Add(new SpellCastingSystem(contexts))
             .Add(new SpellStateTrackingSystem(contexts))
             .Add(new HitEnemiesSystem(contexts))
+            .Add(new EnemyAttackSystem(contexts))
+            .Add(new ProjectileCollisionSystem(contexts))
             .Add(new DestroySystem(contexts))
             ;
     }
@@ -53,6 +56,7 @@ public class GameController : MonoBehaviour
         return new Feature("Game")
                 .Add(new PlayerDisplacementSystem(contexts))
                 .Add(new EnemyDisplacementSystem(contexts))
+                .Add(new ProjectileDisplacementSystem(contexts))
                 .Add(new MoveSystem(contexts))
             ;
     }

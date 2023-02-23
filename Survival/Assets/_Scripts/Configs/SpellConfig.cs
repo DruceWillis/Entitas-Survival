@@ -1,41 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Entitas.CodeGeneration.Attributes;
 
-[CreateAssetMenu(fileName = "GameConfig", menuName = "GameConfig", order = 0)]
-[Game, Unique]
-public class GameConfig : ScriptableObject
+[CreateAssetMenu(fileName = "SpellConfig", menuName = "Configs/SpellConfig", order = 0)]
+public class SpellConfig : ScriptableObject
 {
-    public GameObject enemy; 
     
-    [SerializeField] private LightSpell[] lightSpells;
-    [SerializeField] private StrongSpell[] strongSpells;
-    
-    public GameObject player;
-    public float PlayerSpeed = 5.0f;
+    [SerializeField] private List<LightSpell> _lightSpells = new();
+    [SerializeField] private List<StrongSpell> _strongSpells = new();
+
     public Dictionary<eLightSpellType, LightSpell> LightSpellsMap = new();
     public Dictionary<eStrongSpellType, StrongSpell> StrongSpellsMap = new();
+
     public float LMBSpellCooldown = 1f/3;
     public float RMBSpellCooldown = 3f;
-
+    
     private void OnValidate()
     {
         LightSpellsMap.Clear();
         
-        foreach (var spell in lightSpells)
+        foreach (var spell in _lightSpells)
         {
             LightSpellsMap.Add(spell.SpellType, spell);
         }
         
         StrongSpellsMap.Clear();
         
-        foreach (var spell in strongSpells)
+        foreach (var spell in _strongSpells)
         {
             StrongSpellsMap.Add(spell.SpellType, spell);
         }
     }
 }
+
 
 public class BaseSpell
 {

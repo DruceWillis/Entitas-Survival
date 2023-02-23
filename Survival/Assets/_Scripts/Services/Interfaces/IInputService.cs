@@ -8,5 +8,4 @@ public interface IInputService
     bool LMBWasPressed { get; }
     bool LMBIsPressed { get; }
     bool RMBWasPressed { get; }
-    bool RMBWasReleased { get; }
 }

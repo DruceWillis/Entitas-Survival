@@ -9,7 +9,7 @@ public class EnemyDisplacementSystem : IExecuteSystem
     public EnemyDisplacementSystem(Contexts contexts)
     {
         _contexts = contexts;
-        _entities = _contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Enemy, GameMatcher.View));
+        _entities = _contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Enemy, GameMatcher.View, GameMatcher.CombatEntity));
     }
 
     public void Execute()
@@ -20,11 +20,13 @@ public class EnemyDisplacementSystem : IExecuteSystem
             var pos = e.view.value.transform.position;
             var player = _contexts.game.playerEntity.view.value.transform.position;
             var direction = player - pos;
+
+            var range = e.hasRangedEnemy ? e.rangedEnemy.range : 2f;
             
-            if (!(direction.sqrMagnitude <= 4.5f))
+            if (!(direction.sqrMagnitude <= range))
             {
                 var dir = (player - pos).normalized;
-                displacement = dir * 3;
+                displacement = dir * e.combatEntity.speed;
             }
 
             e.ReplaceDisplacement(displacement);

@@ -3,4 +3,5 @@
 [Game]
 public class EnemyComponent : IComponent
 {
+    
 }
