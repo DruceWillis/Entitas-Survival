@@ -15,9 +15,10 @@ MonoBehaviour:
   _meleeEnemies: []
   _rangedEnemies:
   - Prefab: {fileID: 9145901576694177613, guid: 933127c29e3aac045b23cf845bcf3189, type: 3}
+    GrantedEXPGemType: 0
     Health: 10
     Speed: 3
-    AttackCooldown: 1
+    AttackCooldown: 50
     EnemyType: 0
     Range: 4.5
     Projectile: {fileID: 137624787546692637, guid: 7eda9af23840fc94ea2c3c1232b9bb3f, type: 3}

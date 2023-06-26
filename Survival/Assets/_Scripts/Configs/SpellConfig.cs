@@ -15,7 +15,17 @@ public class SpellConfig : ScriptableObject
     public float LMBSpellCooldown = 1f/3;
     public float RMBSpellCooldown = 3f;
     
+    private void Awake()
+    {
+        PopulateDictionaries();
+    }
+    
     private void OnValidate()
+    {
+        PopulateDictionaries();
+    }
+    
+    private void PopulateDictionaries()
     {
         LightSpellsMap.Clear();
         

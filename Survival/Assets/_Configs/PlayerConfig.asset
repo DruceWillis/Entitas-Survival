@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3780109423907318791, guid: 117ff74c602f3e541a5582abd9e3091c, type: 3}
   PlayerSpeed: 5
-  Health: 100
+  Health: 1000

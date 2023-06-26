@@ -11,7 +11,17 @@ public class EnemySpawnConfig : ScriptableObject
     public Dictionary<eMeleeEnemyType, List<WaveSpecs>> MeleeEnemiesSpawnMap = new();
     public Dictionary<eRangedEnemyType, List<WaveSpecs>> RangedEnemiesSpawnMap = new();
     
+    private void Awake()
+    {
+        PopulateDictionaries();
+    }
+    
     private void OnValidate()
+    {
+        PopulateDictionaries();
+    }
+
+    private void PopulateDictionaries()
     {
         MeleeEnemiesSpawnMap.Clear();
         RangedEnemiesSpawnMap.Clear();
@@ -26,6 +36,7 @@ public class EnemySpawnConfig : ScriptableObject
             RangedEnemiesSpawnMap.Add(rangedEnemySpawner.SpawnType, rangedEnemySpawner.Waves);
         }
     }
+    
 }
 
 [Serializable]

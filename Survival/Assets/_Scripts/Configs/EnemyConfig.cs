@@ -11,7 +11,17 @@ public class EnemyConfig : ScriptableObject
     public Dictionary<eMeleeEnemyType, MeleeEnemy> MeleeEnemiesMap = new();
     public Dictionary<eRangedEnemyType, RangedEnemy> RangedEnemiesMap = new();
     
+    private void Awake()
+    {
+        PopulateDictionaries();
+    }
+    
     private void OnValidate()
+    {
+        PopulateDictionaries();
+    }
+    
+    private void PopulateDictionaries()
     {
         MeleeEnemiesMap.Clear();
         RangedEnemiesMap.Clear();
