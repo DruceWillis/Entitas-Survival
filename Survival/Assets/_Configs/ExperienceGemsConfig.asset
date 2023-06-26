@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb0a4bc3fc048af91324f68c8226027, type: 3}
-  m_Name: PlayerConfig
+  m_Script: {fileID: 11500000, guid: 836a33c17ae94e72abc414864c1b9ce8, type: 3}
+  m_Name: ExperienceGemsConfig
   m_EditorClassIdentifier: 
-  player: {fileID: 3780109423907318791, guid: 117ff74c602f3e541a5582abd9e3091c, type: 3}
-  PlayerSpeed: 5
-  Health: 100
+  Gems:
+  - GemType: 0
+    Prefab: {fileID: 866414400286742574, guid: 3c09f7f908c11694ba635ae4bc3d301e, type: 3}
+    GrantedEXP: 25

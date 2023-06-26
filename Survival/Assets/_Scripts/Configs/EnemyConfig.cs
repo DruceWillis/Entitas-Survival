@@ -31,6 +31,7 @@ public class EnemyConfig : ScriptableObject
 public class EnemyBase
 {
     public GameObject Prefab;
+    public eExperienceGemType GrantedEXPGemType;
     
     public int Health;
     public float Speed;

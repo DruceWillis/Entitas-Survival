@@ -45,6 +45,8 @@ public class GameController : MonoBehaviour
             .Add(new SpellCastingSystem(contexts))
             .Add(new SpellStateTrackingSystem(contexts))
             .Add(new HitEnemiesSystem(contexts))
+            .Add(new ExperienceGemSpawnSystem(contexts))
+            .Add(new ExperienceGemCollisionSystem(contexts))
             .Add(new EnemyAttackSystem(contexts))
             .Add(new ProjectileCollisionSystem(contexts))
             .Add(new DestroySystem(contexts))

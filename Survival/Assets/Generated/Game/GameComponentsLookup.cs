@@ -14,22 +14,25 @@ public static class GameComponentsLookup {
     public const int Displacement = 3;
     public const int EnemyAttackCooldown = 4;
     public const int Enemy = 5;
-    public const int GameConfig = 6;
-    public const int Health = 7;
-    public const int MeleeEnemy = 8;
-    public const int Movable = 9;
-    public const int Player = 10;
-    public const int ProjectileCollision = 11;
-    public const int Projectile = 12;
-    public const int RangedEnemy = 13;
-    public const int Resource = 14;
-    public const int SpawnPosition = 15;
-    public const int SpellCollision = 16;
-    public const int Spell = 17;
-    public const int SpriteRenderer = 18;
-    public const int View = 19;
+    public const int ExperienceGemCollision = 6;
+    public const int ExperienceGem = 7;
+    public const int GameConfig = 8;
+    public const int Health = 9;
+    public const int LevelProgression = 10;
+    public const int MeleeEnemy = 11;
+    public const int Movable = 12;
+    public const int Player = 13;
+    public const int ProjectileCollision = 14;
+    public const int Projectile = 15;
+    public const int RangedEnemy = 16;
+    public const int Resource = 17;
+    public const int SpawnPosition = 18;
+    public const int SpellCollision = 19;
+    public const int Spell = 20;
+    public const int SpriteRenderer = 21;
+    public const int View = 22;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -38,8 +41,11 @@ public static class GameComponentsLookup {
         "Displacement",
         "EnemyAttackCooldown",
         "Enemy",
+        "ExperienceGemCollision",
+        "ExperienceGem",
         "GameConfig",
         "Health",
+        "LevelProgression",
         "MeleeEnemy",
         "Movable",
         "Player",
@@ -61,8 +67,11 @@ public static class GameComponentsLookup {
         typeof(DisplacementComponent),
         typeof(EnemyAttackCooldownComponent),
         typeof(EnemyComponent),
+        typeof(ExperienceGemCollisionComponent),
+        typeof(ExperienceGemComponent),
         typeof(GameConfigComponent),
         typeof(HealthComponent),
+        typeof(LevelProgressionComponent),
         typeof(MeleeEnemyComponent),
         typeof(MovableComponent),
         typeof(PlayerComponent),

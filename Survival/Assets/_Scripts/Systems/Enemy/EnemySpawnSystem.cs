@@ -58,8 +58,8 @@ public class EnemySpawnSystem : IInitializeSystem
     private GameEntity SpawnEnemy(EnemyBase blueprint)
     {
         var e = _contexts.game.CreateEntity();
-        e.isEnemy = true;
         
+        e.AddEnemy(blueprint.GrantedEXPGemType);
         e.AddResource(blueprint.Prefab);
         e.AddDisplacement(Vector3.zero);
         e.AddSpawnPosition(new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0f));

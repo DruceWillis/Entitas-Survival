@@ -23,6 +23,7 @@ public class InitializePlayerSystem : IInitializeSystem
         e.AddSpawnPosition(Vector3.zero);
         e.AddCombatEntity(config.Health, config.PlayerSpeed);
         e.AddHealth(config.Health);
+        e.AddLevelProgression(0, 0, 100);
     }
     
 }
