@@ -1,6 +1,7 @@
 ﻿using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
-[Game]
+[Game, Unique, Event(EventTarget.Self)]
 public class LevelProgressionComponent : IComponent
 {
     public int level;

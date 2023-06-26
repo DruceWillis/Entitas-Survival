@@ -48,8 +48,6 @@ public class ExperienceGemCollisionSystem : ReactiveSystem<GameEntity>
                 }
                 
                 player.ReplaceLevelProgression(currentLevel, currentExp, nextLevelRequiredExp);
-                
-                Debug.Log($"Player level: {currentLevel}, current exp: {currentExp}, next level: {nextLevelRequiredExp}");
             }
             
             ge.isDestroyed = true;

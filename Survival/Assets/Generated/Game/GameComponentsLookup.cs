@@ -19,20 +19,21 @@ public static class GameComponentsLookup {
     public const int GameConfig = 8;
     public const int Health = 9;
     public const int LevelProgression = 10;
-    public const int MeleeEnemy = 11;
-    public const int Movable = 12;
-    public const int Player = 13;
-    public const int ProjectileCollision = 14;
-    public const int Projectile = 15;
-    public const int RangedEnemy = 16;
-    public const int Resource = 17;
-    public const int SpawnPosition = 18;
-    public const int SpellCollision = 19;
-    public const int Spell = 20;
-    public const int SpriteRenderer = 21;
-    public const int View = 22;
+    public const int LevelProgressionListener = 11;
+    public const int MeleeEnemy = 12;
+    public const int Movable = 13;
+    public const int Player = 14;
+    public const int ProjectileCollision = 15;
+    public const int Projectile = 16;
+    public const int RangedEnemy = 17;
+    public const int Resource = 18;
+    public const int SpawnPosition = 19;
+    public const int SpellCollision = 20;
+    public const int Spell = 21;
+    public const int SpriteRenderer = 22;
+    public const int View = 23;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -46,6 +47,7 @@ public static class GameComponentsLookup {
         "GameConfig",
         "Health",
         "LevelProgression",
+        "LevelProgressionListener",
         "MeleeEnemy",
         "Movable",
         "Player",
@@ -72,6 +74,7 @@ public static class GameComponentsLookup {
         typeof(GameConfigComponent),
         typeof(HealthComponent),
         typeof(LevelProgressionComponent),
+        typeof(LevelProgressionListenerComponent),
         typeof(MeleeEnemyComponent),
         typeof(MovableComponent),
         typeof(PlayerComponent),

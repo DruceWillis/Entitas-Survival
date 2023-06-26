@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameConfig _gameConfig;
+    [SerializeField] private MainCanvas _mainCanvas;
     [SerializeField] private Camera _camera;
     
     private Systems _updateSystems;
@@ -17,6 +18,8 @@ public class GameController : MonoBehaviour
     
         _updateSystems = CreateUpdateSystems(contexts);
         _updateSystems.Initialize();
+
+        _mainCanvas.Initialize();
         
         _fixedUpdateSystems = CreateFixedUpdateSystems(contexts);
         _fixedUpdateSystems.Initialize();
@@ -38,6 +41,7 @@ public class GameController : MonoBehaviour
     {
         return new Feature("Game")
             .Add(new InitializePlayerSystem(contexts))
+            .Add(new GameEventSystems(contexts))
             .Add(new EnemySpawnSystem(contexts, this))
             .Add(new InstantiateCombatEntitySystem(contexts))
             .Add(new EmitInputSystem(contexts, new UnityInputService(_camera)))
