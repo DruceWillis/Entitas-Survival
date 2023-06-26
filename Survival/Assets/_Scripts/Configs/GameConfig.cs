@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Entitas.CodeGeneration.Attributes;
 
 [CreateAssetMenu(fileName = "GameConfig", menuName = "Configs/GameConfig", order = 0)]

@@ -17,4 +17,4 @@ MonoBehaviour:
   - SpawnType: 0
     Waves:
     - Duration: 60
-      SpawnAmount: 5
+      SpawnAmount: 120

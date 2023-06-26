@@ -11,6 +11,7 @@ public class UpdateCameraSystem : IExecuteSystem
     public UpdateCameraSystem(Contexts contexts, Camera camera)
     {
         _contexts = contexts;
+        if (_contexts == null) Debug.Log("YO");
         _camera = camera;
         _cameraOffset = new Vector3(0, 0, _camera.transform.position.z);
     }
