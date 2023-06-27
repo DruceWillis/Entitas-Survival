@@ -10,6 +10,7 @@ public class GameConfig : ScriptableObject
     [SerializeField] private EnemyConfig _enemyConfig;
     [SerializeField] private EnemySpawnConfig _enemySpawnConfig;
     [SerializeField] private ExperienceGemsConfig _gemsConfig;
+    [SerializeField] private DamageText _damageTextPrefab;
 
     public PlayerConfig PlayerConfig => _playerConfig;
     public SpellConfig SpellConfig => _spellConfig;
@@ -17,4 +18,5 @@ public class GameConfig : ScriptableObject
     public EnemySpawnConfig EnemySpawnConfig => _enemySpawnConfig;
     public ExperienceGemsConfig GemsConfig => _gemsConfig;
 
+    public DamageText DamageTextPrefab => _damageTextPrefab;
 }

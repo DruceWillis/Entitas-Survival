@@ -31,7 +31,7 @@ public class ProjectileCollisionSystem : ReactiveSystem<GameEntity>
 
             var pe = _contexts.game.GetEntitiesWithView(p).SingleEntity();
 
-            if (co.layer == LayerMask.NameToLayer("Player"))
+            if (pe.isEnemyProjectile && co.layer == LayerMask.NameToLayer("Player"))
             {
                 var player = _contexts.game.playerEntity;
                 var currentHealth = player.health.value - 1;
@@ -41,9 +41,23 @@ public class ProjectileCollisionSystem : ReactiveSystem<GameEntity>
                     player.isDestroyed = true;
                 else
                     player.animator.value.SetTrigger(Constants.TakeHit);
+                pe.isDestroyed = true;
             }
-            
-            pe.isDestroyed = true;
+            else if (pe.isPlayerProjectile && co.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                var enemyEntity = _contexts.game.GetEntitiesWithView(co).SingleEntity();
+                var currentHealth = enemyEntity.health.value - pe.spell.damage;
+                enemyEntity.ReplaceHealth(currentHealth);
+                
+                if (currentHealth <= 0)
+                    enemyEntity.isDestroyed = true;
+                else
+                    enemyEntity.animator.value.SetTrigger(Constants.TakeHit);
+            }
+            else
+            {
+                pe.isDestroyed = true;
+            }
         }
     }
 }

@@ -26,6 +26,8 @@ public class MoveSystem : IExecuteSystem
                 e.animator.value.SetBool(Constants.IsMoving, isMoving);
             }
 
+            if (!e.hasSpriteRenderer) continue;
+            
             if (displacement.x > 0)
                 e.spriteRenderer.value.flipX = false;
             else if (displacement.x < 0)

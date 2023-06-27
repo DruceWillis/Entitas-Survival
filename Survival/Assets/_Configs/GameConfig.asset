@@ -17,3 +17,4 @@ MonoBehaviour:
   _enemyConfig: {fileID: 11400000, guid: 7e4af054b5a6e0646b9929c23cffe9d3, type: 2}
   _enemySpawnConfig: {fileID: 11400000, guid: a00463b425e7848448d74224708350e2, type: 2}
   _gemsConfig: {fileID: 11400000, guid: bbb36e96d45b35640bebf7a7b01899fd, type: 2}
+  _damageTextPrefab: {fileID: 7642335270250453769, guid: e3e45f0a0d3d31e42b5bb5aea1821b57, type: 3}

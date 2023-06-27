@@ -16,5 +16,5 @@ MonoBehaviour:
   _rangedEnemiesSpawners:
   - SpawnType: 0
     Waves:
-    - Duration: 30
+    - Duration: 120
       SpawnAmount: 360

@@ -34,7 +34,8 @@ public class HitEnemiesSystem : ReactiveSystem<GameEntity>
                 var enemyEntity = _contexts.game.GetEntitiesWithView(enemy).SingleEntity();
                 var currentHealth = enemyEntity.health.value - damage;
                 enemyEntity.ReplaceHealth(currentHealth);
-                
+                var damageText = Object.Instantiate(_contexts.game.gameConfig.value.DamageTextPrefab, enemyEntity.view.value.transform.position, Quaternion.identity);
+                damageText.Initialize(damage);
                 if (currentHealth <= 0)
                     enemyEntity.isDestroyed = true;
                 else

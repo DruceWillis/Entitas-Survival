@@ -41,6 +41,7 @@ public class EnemyAttackSystem : IExecuteSystem
         var projectile = _contexts.game.CreateEntity();
 
         projectile.AddView(go);
+        projectile.isEnemyProjectile = true;
         go.Link(projectile);
         
         var dir = _playerTr.position - spawnPos;

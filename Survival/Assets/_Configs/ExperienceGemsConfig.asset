@@ -15,4 +15,4 @@ MonoBehaviour:
   Gems:
   - GemType: 0
     Prefab: {fileID: 866414400286742574, guid: 3c09f7f908c11694ba635ae4bc3d301e, type: 3}
-    GrantedEXP: 25
+    GrantedEXP: 40

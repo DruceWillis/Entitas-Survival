@@ -14,26 +14,29 @@ public static class GameComponentsLookup {
     public const int Displacement = 3;
     public const int EnemyAttackCooldown = 4;
     public const int Enemy = 5;
-    public const int ExperienceGemCollision = 6;
-    public const int ExperienceGem = 7;
-    public const int GameConfig = 8;
-    public const int Health = 9;
-    public const int LevelProgression = 10;
-    public const int LevelProgressionListener = 11;
-    public const int MeleeEnemy = 12;
-    public const int Movable = 13;
-    public const int Player = 14;
-    public const int ProjectileCollision = 15;
-    public const int Projectile = 16;
-    public const int RangedEnemy = 17;
-    public const int Resource = 18;
-    public const int SpawnPosition = 19;
-    public const int SpellCollision = 20;
-    public const int Spell = 21;
-    public const int SpriteRenderer = 22;
-    public const int View = 23;
+    public const int EnemyProjectile = 6;
+    public const int ExperienceGemCollision = 7;
+    public const int ExperienceGem = 8;
+    public const int GameConfig = 9;
+    public const int Health = 10;
+    public const int HealthListener = 11;
+    public const int LevelProgression = 12;
+    public const int LevelProgressionListener = 13;
+    public const int MeleeEnemy = 14;
+    public const int Movable = 15;
+    public const int Player = 16;
+    public const int PlayerProjectile = 17;
+    public const int ProjectileCollision = 18;
+    public const int Projectile = 19;
+    public const int RangedEnemy = 20;
+    public const int Resource = 21;
+    public const int SpawnPosition = 22;
+    public const int SpellCollision = 23;
+    public const int Spell = 24;
+    public const int SpriteRenderer = 25;
+    public const int View = 26;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -42,15 +45,18 @@ public static class GameComponentsLookup {
         "Displacement",
         "EnemyAttackCooldown",
         "Enemy",
+        "EnemyProjectile",
         "ExperienceGemCollision",
         "ExperienceGem",
         "GameConfig",
         "Health",
+        "HealthListener",
         "LevelProgression",
         "LevelProgressionListener",
         "MeleeEnemy",
         "Movable",
         "Player",
+        "PlayerProjectile",
         "ProjectileCollision",
         "Projectile",
         "RangedEnemy",
@@ -69,15 +75,18 @@ public static class GameComponentsLookup {
         typeof(DisplacementComponent),
         typeof(EnemyAttackCooldownComponent),
         typeof(EnemyComponent),
+        typeof(EnemyProjectile),
         typeof(ExperienceGemCollisionComponent),
         typeof(ExperienceGemComponent),
         typeof(GameConfigComponent),
         typeof(HealthComponent),
+        typeof(HealthListenerComponent),
         typeof(LevelProgressionComponent),
         typeof(LevelProgressionListenerComponent),
         typeof(MeleeEnemyComponent),
         typeof(MovableComponent),
         typeof(PlayerComponent),
+        typeof(PlayerProjectile),
         typeof(ProjectileCollisionComponent),
         typeof(ProjectileComponent),
         typeof(RangedEnemyComponent),

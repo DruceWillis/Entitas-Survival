@@ -11,9 +11,11 @@ public class SpellConfig : ScriptableObject
 
     public Dictionary<eLightSpellType, LightSpell> LightSpellsMap = new();
     public Dictionary<eStrongSpellType, StrongSpell> StrongSpellsMap = new();
+    public BaseSpell IceSpear;
 
     public float LMBSpellCooldown = 1f/3;
     public float RMBSpellCooldown = 3f;
+    public float IceSpearCooldown = 2f;
     
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class SpellConfig : ScriptableObject
 }
 
 
+[Serializable]
 public class BaseSpell
 {
     public GameObject Prefab;

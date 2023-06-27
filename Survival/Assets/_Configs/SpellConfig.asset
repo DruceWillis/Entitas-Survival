@@ -20,5 +20,8 @@ MonoBehaviour:
   - Prefab: {fileID: 6499822883630383744, guid: 215491be02bed63488dd7d4797dd90ae, type: 3}
     Damage: 10
     SpellType: 0
+  IceSpear:
+    Prefab: {fileID: 600950940241432077, guid: 5400c1c74436ba044802be1ebde5c767, type: 3}
+    Damage: 10
   LMBSpellCooldown: 0.33333334
   RMBSpellCooldown: 1
